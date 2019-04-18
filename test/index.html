@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+   <script async custom-element="amp-iframe"
+    src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="http://localhost/ja/documentation/guides-and-tutorials/start/create/basic_markup">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -26,29 +28,29 @@
 <script type="application/json">
 {
     "dfn": {
-        "ja": {
-            "h2": "夏祭りのお知らせ",
-            "p": "来週土曜日10:00から市内アーケードにて夏祭りがスタートします。"
+        "one": {
+            "path": "one.html"
         },
 
-        "en": {
-            "h2": "Summer Festical",
-            "p": "Our summer festival will start in the arcade street from 10:00 next Saturday."
+        "two": {
+            "path": "two.html"
         }
     },
 
-    "val": "ja"
+    "val": "one"
 }
 </script>
 </amp-state>
 
 <select on="change:AMP.setState({id_xyz:{val:event.value}})">
-<option value="ja">日本語</option>
-<option value="en">English</option>
+<option value="one">one</option>
+<option value="two">two</option>
 </select>
-
-<h2 [text]="id_xyz.dfn[id_xyz.val].h2">夏祭りのお知らせ</h2>
-<p [text]="id_xyz.dfn[id_xyz.val].p">来週土曜日10:00から市内アーケードにて夏祭りがスタートします。</p>
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
+    layout="responsive"
+    src="id_xyz.dfn[id_xyz.val].path">
+</amp-iframe>
 </div>　
    
   </body>
