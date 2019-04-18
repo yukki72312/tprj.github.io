@@ -21,28 +21,35 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <amp-state id="id123">
+<div class="container">
+<amp-state id="id_xyz">
 <script type="application/json">
-{"tab":"a"}
+{
+    "dfn": {
+        "ja": {
+            "h2": "夏祭りのお知らせ",
+            "p": "来週土曜日10:00から市内アーケードにて夏祭りがスタートします。"
+        },
+
+        "en": {
+            "h2": "Summer Festical",
+            "p": "Our summer festival will start in the arcade street from 10:00 next Saturday."
+        }
+    },
+
+    "val": "ja"
+}
 </script>
 </amp-state>
 
-<ul class="tab">
-<li class="on" [class]="id123.tab == 'a' ? 'on' : ''" on="tap:AMP.setState({id123:{tab:'a'}})" role="button" tabindex="0">Aグループ</li>
-<li [class]="id123.tab == 'b' ? 'on' : ''" on="tap:AMP.setState({id123:{tab:'b'}})" role="button" tabindex="0">Bグループ</li>
-<li [class]="id123.tab == 'c' ? 'on' : ''" on="tap:AMP.setState({id123:{tab:'c'}})" role="button" tabindex="0">Cグループ</li>
-</ul>
+<select on="change:AMP.setState({id_xyz:{val:event.value}})">
+<option value="ja">日本語</option>
+<option value="en">English</option>
+</select>
 
-<div class="contents">
-<div [class]="id123.tab != 'a' ? 'hidden' : ''">
-Aグループ
-</div>
-<div class="hidden" [class]="id123.tab != 'b' ? 'hidden' : ''">
-Bグループ<br />Bグループ
-</div>
-<div class="hidden" [class]="id123.tab != 'c' ? 'hidden' : ''">
-Cグループ<br />Cグループ<br />Cグループ
-</div>
+<h2 [text]="id_xyz.dfn[id_xyz.val].h2">夏祭りのお知らせ</h2>
+<p [text]="id_xyz.dfn[id_xyz.val].p">来週土曜日10:00から市内アーケードにて夏祭りがスタートします。</p>
 </div>　
+   
   </body>
 </html>
