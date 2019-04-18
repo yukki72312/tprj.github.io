@@ -1,0 +1,48 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="http://localhost/ja/documentation/guides-and-tutorials/start/create/basic_markup">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <amp-state id="id123">
+<script type="application/json">
+{"tab":"a"}
+</script>
+</amp-state>
+
+<ul class="tab">
+<li class="on" [class]="id123.tab == 'a' ? 'on' : ''" on="tap:AMP.setState({id123:{tab:'a'}})" role="button" tabindex="0">Aグループ</li>
+<li [class]="id123.tab == 'b' ? 'on' : ''" on="tap:AMP.setState({id123:{tab:'b'}})" role="button" tabindex="0">Bグループ</li>
+<li [class]="id123.tab == 'c' ? 'on' : ''" on="tap:AMP.setState({id123:{tab:'c'}})" role="button" tabindex="0">Cグループ</li>
+</ul>
+
+<div class="contents">
+<div [class]="id123.tab != 'a' ? 'hidden' : ''">
+Aグループ
+</div>
+<div class="hidden" [class]="id123.tab != 'b' ? 'hidden' : ''">
+Bグループ<br />Bグループ
+</div>
+<div class="hidden" [class]="id123.tab != 'c' ? 'hidden' : ''">
+Cグループ<br />Cグループ<br />Cグループ
+</div>
+</div>　
+  </body>
+</html>
