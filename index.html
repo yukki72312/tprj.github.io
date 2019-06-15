@@ -73,6 +73,24 @@
     url=http://tprj.xyz&
     related=Toto31010" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <iframe src="https://discordapp.com/widget?id=486803536865394689&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+  <script src="cheet.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        cheet('↑ ↑ ↓ ↓ ← → ← → b a', function() {
+            $('#grid').animate({
+                'z-index': 1
+            }, {
+                duration: 1000,
+                step: function(num) {
+                    $(this).css({
+                        transform: 'rotate(' + (num * 360) + 'deg)'
+                    });
+                },
+                complete: function() {
+                    $('#grid').css('z-index', 0);
+                }
+            });
 
+        });
+    </script>
 </body>
 </html>
